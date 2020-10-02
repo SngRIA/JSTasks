@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="jquery-ui-1.12.1/jquery-ui.theme.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="scripts/grid-data.js"></script>
+    <script src="js/i18n/grid.locale-ru.js"></script>
+    <script src="js/jquery.jqGrid.min.js"></script>
+    <script src="scripts/validator.js"></script>
+    <script src="scripts/fill-years.js"></script>
+</head>
+<body>
+    <header></header>
+    <main class="mx-auto mt-2"> <!-- ! ДИЗАЙН ТАБЛИЦЫ ЛУЧШЕ ! -->
+        <!--<div id="login" class="page-block login rounded">
+            <form>
+                <input type="text" name="email" placeholder="Телефон или email"/>
+                <input type="password" name="password" placeholder="Пароль"/>
+                <button type="button" id="login" class="btn btn-primary mt-2 mr-2">Войти</button>
+                <div class="d-inline">
+                    <a href="" class="recover-password">Забыли пароль?</a>
+                </div>
+            </form>
+        </div>-->
+        <div id="register" class="page-block register rounded">
+            <form>
+                <div class="text-center mb-3">
+                    <h2 class="register-header">Впервые ВКонтакте?</h2>
+                    <small>Моментальная регистрация</small>
+                </div>
+                <input type="text" name="firstName" placeholder="Ваше имя" />
+                <input type="text" name="lastName" placeholder="Ваша фамилия" />
+                <small class="form-text text-muted mb-2">Дата рождения</small>
+                <div class="d-flex">
+                    <select name="day" class="small-text form-control mr-2 w-auto">
+                        <option>День</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>26</option>
+                        <option>27</option>
+                        <option>28</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                    </select>
+                    <select name="month" class="small-text form-control mr-2 w-auto">
+                        <option>Месяц</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                    <select name="year" class="small-text form-control">
+                        <option>Год</option>
+                    </select>
+                </div>
+                <div class="mt-3">
+                    <select name="city" class="small-text form-control">
+                        <option>Город</option>
+                        <option>Город 1</option>
+                        <option>Город 2</option>
+                        <option>Город 3</option>
+                        <option>Город 4</option>
+                        <option>Город 5</option>
+                    </select>
+                </div>
+                <button type="button" id="button-register" class="btn btn-success w-100">Продолжить регистрацию</button>
+                <button type="button" class="btn btn-primary w-100">Войти через Facebook</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="d-flex grid">
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+        <script type="text/javascript"> 
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: GridDate,
+                    colModel: [
+                        { label: 'ID', name: 'id', key: true, width: 50, align:"center" },
+                        { label: 'Имя', name: 'firstName', width: 150, align:"center" },
+                        { label: 'Фамилия', name: 'lastName', width: 150, align:"center" },
+                        { label: 'Город ', name: 'city', width: 200, align:"center" },
+                        { label: 'Дата рождения', name: 'birthday', width: 200, align:"center",
+                        formatter: 'date', formatoptions: { srcformat: 'd/m/Y', newformat: 'd.m.Y'}}
+                    ],
+                    viewrecords: true,
+                    width: 780,
+                    height: 250,
+                    rowNum: 10,
+                    pager: "#jqGridPager"
+                });
+            });
+        </script>
+   </div>
+
+    <footer></footer>
+</body>
+</html>

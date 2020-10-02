@@ -1,0 +1,99 @@
+/* Изменяем фоновый цвет */
+body {
+    background-color: #edeef0;
+}
+
+/* Изменяем фоновый цвет */
+header {
+    background-color: #4a76a8;
+}
+
+/* Установка ширины и смена цвета фона */
+main {
+    width: 320px;
+    background-color: #edeef0;
+}
+
+/* Контейнер формы логина и пароля */
+.page-block {
+    margin: 30px 0 20px 0;
+    padding: 25px;
+    background-color: #ffffff;
+}
+
+/* Выравнивание элементов по ширине */
+.login div {
+    vertical-align: sub;
+}
+
+/* Установка размера у кнопки на форме логина */
+.login button {
+    width: 100px;
+}
+
+/*
+ Устанавливаем ширину для всех инпутов,
+ убираем черную рамку, добавляем закругление,
+ задаем отступы чтобы форма не слипалась
+*/
+input {
+    width: 270px;
+    margin-bottom: 15px;
+    padding: 6px 12px 8px;
+    border: 1px solid #d3d9de;
+    border-radius: 3px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* 
+ Верх формы регистрации,
+ убираем маргин для слияния основной надписи с нижней
+ */
+.register-header {
+    margin: 0;
+    font-size: 20px;
+}
+
+
+/* Кнопки формы регистрации, отступ чтобы не слипались */
+.register button {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 20px;
+}
+
+/* Устанавливает заполнение всего пространство объектом */
+.w-auto {
+    width: auto;
+}
+
+/* Установка шрифта 14px */
+.small-text {
+    font-size: 14px;
+}
+
+
+/* Удаление черных полос при фокусе */
+input:focus, select:focus {
+    font-size: 14px;
+    outline-color: #d3d9de;
+}
+
+
+/* Таблица, установка позиционирования по центру */
+.grid {
+    justify-content: center;
+}
+
+/* Выделенный элемент у jqGrid, изменяем цвет на подходящий */
+.ui-state-highlight {
+    border: 1px solid #ced4da !important;
+    background: #d3d9de !important;
+    color: black !important;
+}
+
+/* Изменяем цвет шапки таблицы */
+.ui-state-default {
+    background: white !important;
+}
